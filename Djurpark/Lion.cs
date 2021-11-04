@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace Djurpark
 {
-    class Lion : Animal
+    class Lion : Carnivore
     {
 
-        public Lion() : base()
+        public Lion(string name) : base(name)
         {
 
         }
 
+        public override string AnimalType()
+        {
+            return "Lion";
+        }
     }
 }

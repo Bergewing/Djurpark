@@ -6,22 +6,28 @@ using System.Threading.Tasks;
 
 namespace Djurpark
 {
-    class Animal
+    abstract class Animal
     {
-        private int _numOfLegs;
+        public int NumOfLegs { get;}
+        public string _name;
 
-        public int NumberOfLegs{ get{ return _numOfLegs; }}
-
-        protected Animal()
+        protected Animal(string name)
         {
-            _numOfLegs = 4;
+            _name = name;
         }
 
-        public void Feed(string food)                           //Kolla om man kan köra denna
-        {                                                       //string istället för void
-            Console.WriteLine($"The animal is eating {food}");  
+        public virtual void Feed(Food food)                             //Kolla om man kan köra denna
+        {                                                               //string istället för void
+            Console.WriteLine($"The {_name} is eating {food}");
 
         }
+
+        public virtual string Pet(string name)
+        {
+            return $"{AnimalType()}{name} was petted";
+        }
+
+        public abstract string AnimalType();
 
     }
 }

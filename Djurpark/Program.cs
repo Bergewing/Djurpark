@@ -20,16 +20,16 @@ using Djurpark;
 //Eller här.
 
 //Fråga varför och när man använder void kontra return
-Zoo Zebra1 = new Zoo();
 
-Zebra1._animals.Add(new Zebra());
-Zebra1._animals.Add(new Lion());
 
-var djur = Zebra1._animals;
+Zoo zoo = new Zoo("");
 
-foreach (var item in djur)
-{
-    Console.WriteLine(item);
-}
+zoo.FeedAllAnimals(Food.Beef);
 
-Zebra1.FeedAllAnimals("Papper");
+zoo.ListOfAnimals();
+
+zoo.ListOfHerbivores();
+
+//zoo.PetAnimal();
+
+Console.WriteLine(zoo.PetAnimal("Sedermera"));
